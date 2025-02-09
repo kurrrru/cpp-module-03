@@ -14,20 +14,20 @@ ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10),
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
-	std::cout << "copy constructor ClapTrap" << std::endl;
 	_name = other._name;
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
 	_attackDamage = other._attackDamage;
+	std::cout << "copy constructor ClapTrap" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
-	std::cout << "copy assignation operator ClapTrap" << std::endl;
 	if (this != &other) {
 		_name = other._name;
 		_hitPoints = other._hitPoints;
 		_energyPoints = other._energyPoints;
 		_attackDamage = other._attackDamage;
+		std::cout << "copy assignation operator ClapTrap" << std::endl;
 	}
 	return *this;
 }
@@ -52,9 +52,9 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		return;
 	}
 	unsigned int damage = amount > _hitPoints ? _hitPoints : amount;
+	_hitPoints -= damage;
 	std::cout << "ClapTrap " << _name << " takes " << damage
 		<< " points of damage!" << std::endl;
-	_hitPoints -= damage;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -62,8 +62,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << _name << " is already dead" << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " is repaired for " << amount
-		<< " points!" << std::endl;
 	_energyPoints -= 1;
 	_hitPoints += amount;
+	std::cout << "ClapTrap " << _name << " is repaired for " << amount
+		<< " points!" << std::endl;
 }
