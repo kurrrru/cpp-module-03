@@ -1,5 +1,9 @@
 #pragma once
 
+#define CL_CYAN "\033[1;36m"
+#define CL_RED "\033[1;31m"
+#define CL_RESET "\033[0m"
+
 #include <string>
 
 class ClapTrap {
