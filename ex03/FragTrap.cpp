@@ -23,10 +23,7 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
 
 FragTrap &FragTrap::operator=(const FragTrap &other) {
 	if (this != &other) {
-		_name = other._name;
-		_hitPoints = other._hitPoints;
-		_energyPoints = other._energyPoints;
-		_attackDamage = other._attackDamage;
+		ClapTrap::operator=(other);
 		std::cout << "copy assignation operator FragTrap" << std::endl;
 	}
 	return *this;
@@ -38,14 +35,18 @@ FragTrap::~FragTrap() {
 
 void FragTrap::attack(const std::string &target) {
 	if (_energyPoints == 0 || _hitPoints == 0) {
-		std::cout << "FragTrap " << _name << " can't attack" << std::endl;
+		std::cout << "FragTrap " << CL_CYAN << _name
+			<< CL_RESET << " can't attack" << std::endl;
 		return;
 	}
-	std::cout << "FragTrap " << _name << " attacks " << target
-		<< ", causing " << _attackDamage << " points of damage!" << std::endl;
+	std::cout << "FragTrap " << CL_CYAN << _name
+		<< CL_RESET << " attacks " << target
+		<< ", causing " << CL_RED << _attackDamage
+		<< CL_RESET << " points of damage!" << std::endl;
 	_energyPoints -= 1;
 }
 
 void FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap " << _name << " requests a high five" << std::endl;
+	std::cout << "FragTrap " << CL_CYAN << _name
+		<< CL_RESET << " requests a high five" << std::endl;
 }
