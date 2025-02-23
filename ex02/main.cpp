@@ -20,5 +20,8 @@ int main() {
     fragTrap3.beRepaired(3);
     fragTrap3.highFivesGuys();
     fragTrap3.ClapTrap::attack("target");
+    ClapTrap* claptrap = new FragTrap("FragTrap");
+    claptrap->attack("target");
+    delete claptrap;
     return 0;
 }

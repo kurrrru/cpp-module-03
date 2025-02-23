@@ -22,5 +22,8 @@ int main() {
     scavTrap3.takeDamage(3);
     scavTrap3.beRepaired(3);
     scavTrap3.ClapTrap::attack("target");
+    ClapTrap* claptrap = new ScavTrap("ScavTrap");
+    claptrap->attack("target");
+    delete claptrap;
     return 0;
 }
