@@ -35,8 +35,8 @@ int main() {
     diamondTrap3.ClapTrap::attack("target");
     diamondTrap3.FragTrap::attack("target");
     diamondTrap3.ScavTrap::attack("target");
-	ClapTrap* claptrap = new DiamondTrap("DiamondTrap");
-	claptrap->attack("target");
-	delete claptrap;
+    ClapTrap* claptrap = new DiamondTrap("DiamondTrap");
+    claptrap->attack("target");
+    delete claptrap;
     return 0;
 }
