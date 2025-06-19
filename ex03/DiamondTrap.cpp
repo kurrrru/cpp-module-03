@@ -8,6 +8,8 @@ DiamondTrap::DiamondTrap() {
     _hitPoints = FragTrap::_hitPoints;
     _energyPoints = ScavTrap::_energyPoints;
     _attackDamage = FragTrap::_attackDamage;
+    _name = "default";
+    ClapTrap::_name = _name + "_clap_name";
 }
 
 DiamondTrap::DiamondTrap(const std::string& name)
@@ -20,10 +22,11 @@ DiamondTrap::DiamondTrap(const std::string& name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
-    : _name(other._name) ,ClapTrap(other), ScavTrap(other), FragTrap(other) {
+    : ClapTrap(other), ScavTrap(other), FragTrap(other) {
     _hitPoints = other._hitPoints;
     _energyPoints = other._energyPoints;
     _attackDamage = other._attackDamage;
+    _name = other._name;
     std::cout << "copy constructor DiamondTrap" << std::endl;
 }
 
