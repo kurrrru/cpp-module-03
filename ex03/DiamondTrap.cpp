@@ -20,7 +20,7 @@ DiamondTrap::DiamondTrap(const std::string& name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
-    : ClapTrap(other), ScavTrap(other), FragTrap(other) {
+    : _name(other._name) ,ClapTrap(other), ScavTrap(other), FragTrap(other) {
     _hitPoints = other._hitPoints;
     _energyPoints = other._energyPoints;
     _attackDamage = other._attackDamage;
